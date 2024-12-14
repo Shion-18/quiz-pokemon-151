@@ -155,8 +155,6 @@ function App() {
               userAnswer={lastAnswer.userAnswer}
               pokemon={lastAnswer.pokemon}
               onNext={handleNextQuestion}
-              currentQuestion={history.length + 1}
-              totalQuestions={10}
             />
           ) : (
             // 現在の問題を表示
