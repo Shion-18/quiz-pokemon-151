@@ -1,14 +1,18 @@
+// Pokemonインターフェースの定義
+// このインターフェースは、ポケモンの情報を表します。
 export interface Pokemon {
-  id: number;
+  id: number; // ポケモンのID
   name: {
-    japanese: string;
-    english: string;
+    japanese: string; // ポケモンの日本語名
+    english: string; // ポケモンの英語名
   };
-  imageUrl: string;
+  imageUrl: string; // ポケモンの画像URL
 }
 
+// QuizQuestionインターフェースの定義
+// このインターフェースは、クイズの問題を表します。
 export interface QuizQuestion {
-  pokemon: Pokemon;
-  options: string[];
-  correctAnswer: string;
+  pokemon: Pokemon; // クイズの問題となるポケモン
+  options: string[]; // 回答の選択肢
+  correctAnswer: string; // 正しい回答
 }

@@ -1,26 +1,35 @@
-import React from 'react';
-import type { QuizHistory } from '../hooks/useQuiz';
-import { CheckCircle2, XCircle, Share2 } from 'lucide-react';
+import React from 'react'; // Reactライブラリをインポート
+import type { QuizHistory } from '../hooks/useQuiz'; // useQuizフックからQuizHistory型をインポート
+import { CheckCircle2, XCircle, Share2 } from 'lucide-react'; // lucide-reactライブラリからアイコンをインポート
 
+// QuizResultsPropsインターフェイスの定義
+// このインターフェイスは、QuizResultsコンポーネントが受け取るプロパティの型を定義します。
 interface QuizResultsProps {
-  score: number;
-  history: QuizHistory[];
-  onReset: () => void;
+  score: number; // ユーザーが正解した問題数
+  history: QuizHistory[]; // クイズの履歴を保持する配列
+  onReset: () => void; // クイズをリセットするための関数
 }
 
+// QuizResultsコンポーネントの定義
+// このコンポーネントは、クイズの結果を表示します。
 export const QuizResults: React.FC<QuizResultsProps> = ({ score, history, onReset }) => {
-  const totalQuestions = history.length;
-  const incorrectCount = totalQuestions - score;
+  const totalQuestions = history.length; // 全問題数を計算
+  const incorrectCount = totalQuestions - score; // 不正解した問題数を計算
 
+  // 結果をシェアするための関数
+  // ユーザーが結果をシェアしたいときに呼び出されます。
   const handleShare = () => {
+    // 各問題の結果をエモジで表した文字列を作成
     const resultEmojis = history.map((item, index) => 
       `${index + 1}${item.isCorrect ? '🟢' : '❌'}`
     ).join('');
     
+    // シェアするテキストを作成
     const shareText = `初代ポケモン名前当てクイズ\n\n${score}/${totalQuestions}問 正解！\n${resultEmojis}\n\n#初代ポケモン名前当てクイズ`;
 
+    // シェアするためのURLを作成
     const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
-    window.open(shareUrl, '_blank');
+    window.open(shareUrl, '_blank'); // シェアするためのウィンドウを開く
   };
 
   return (
@@ -29,7 +38,7 @@ export const QuizResults: React.FC<QuizResultsProps> = ({ score, history, onRese
         10問中{score}問正解しました！
       </h2>
 
-      {/* Score Graph */}
+      {/* スコアグラフを表示する部分 */}
       <div className="mb-8">
         <div className="bg-blue-50 rounded-lg p-4">
           <div className="flex items-center gap-4 mb-2">
@@ -55,7 +64,7 @@ export const QuizResults: React.FC<QuizResultsProps> = ({ score, history, onRese
         </div>
       </div>
 
-      {/* Question History */}
+      {/* 各問題の履歴を表示する部分 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
         {history.map((item, index) => (
           <div 
@@ -93,14 +102,14 @@ export const QuizResults: React.FC<QuizResultsProps> = ({ score, history, onRese
 
       <div className="flex justify-center gap-4">
         <button
-          onClick={onReset}
+          onClick={onReset} // クイズをリセットするボタン
           className="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg
                    hover:bg-blue-700 transition-colors duration-200"
         >
           もう一度プレイ
         </button>
         <button
-          onClick={handleShare}
+          onClick={handleShare} // 結果をシェアするボタン
           className="bg-indigo-600 text-white font-semibold py-2 px-6 rounded-lg
                    hover:bg-indigo-700 transition-colors duration-200 flex items-center gap-2"
         >

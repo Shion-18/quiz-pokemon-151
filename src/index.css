@@ -1,9 +1,16 @@
+/* Tailwind CSSの基本スタイルをインポート */
 @tailwind base;
+
+/* Tailwind CSSのコンポーネントスタイルをインポート */
 @tailwind components;
+
+/* Tailwind CSSのユーティリティスタイルをインポート */
 @tailwind utilities;
 
+/* 基本レイヤーにカスタムスタイルを追加 */
 @layer base {
   body {
+    /* 文字を滑らかに表示するためのスタイルを適用 */
     @apply antialiased;
   }
 }

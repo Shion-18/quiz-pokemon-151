@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { useQuiz } from './hooks/useQuiz';
-import { QuizCard } from './components/QuizCard';
-import { ScoreBoard } from './components/ScoreBoard';
-import { QuizResults } from './components/QuizResults';
-import { AnswerFeedback } from './components/AnswerFeedback';
-import { Gamepad2, Users } from 'lucide-react';
-import type { Pokemon } from './types/pokemon';
+import { useState } from 'react'; // ReactのuseStateフックをインポート
+import { useQuiz } from './hooks/useQuiz'; // useQuizフックをインポート
+import { QuizCard } from './components/QuizCard'; // QuizCardコンポーネントをインポート
+import { ScoreBoard } from './components/ScoreBoard'; // ScoreBoardコンポーネントをインポート
+import { QuizResults } from './components/QuizResults'; // QuizResultsコンポーネントをインポート
+import { AnswerFeedback } from './components/AnswerFeedback'; // AnswerFeedbackコンポーネントをインポート
+import { Gamepad2, Users } from 'lucide-react'; // lucide-reactライブラリからアイコンをインポート
+import type { Pokemon } from './types/pokemon'; // Pokemon型をインポート
 
 function App() {
+  // useQuizフックから必要な状態と関数を取得
   const { 
     currentQuestion, 
     score,
@@ -18,39 +19,45 @@ function App() {
     generateQuestion, 
     checkAnswer,
     resetQuiz 
-  } = useQuiz();
+  } = useQuiz(); 
 
-  const [showingAnswer, setShowingAnswer] = useState(false);
+  // 正解を表示するかどうかを管理する状態
+  const [showingAnswer, setShowingAnswer] = useState(false); 
+  // 最後の正解を管理する状態
   const [lastAnswer, setLastAnswer] = useState<{
     isCorrect: boolean;
     correctAnswer: string;
     userAnswer: string;
     pokemon: Pokemon;
-  } | null>(null);
+  } | null>(null); 
 
+  // クイズを始めるボタンがクリックされた時に、新しい問題を生成
   const handleStartQuiz = () => {
-    generateQuestion();
+    generateQuestion(); 
   };
 
+  // ユーザーの回答が正しいかどうかをチェックし、状態を更新
   const handleAnswer = (answer: string) => {
-    if (!currentQuestion) return;
+    if (!currentQuestion) return; // 現在の問題が存在しない場合は何もしない
     
-    const isCorrect = checkAnswer(answer);
+    const isCorrect = checkAnswer(answer); // ユーザーの回答が正しいかどうかをチェック
     setLastAnswer({
       isCorrect,
       correctAnswer: currentQuestion.pokemon.name.japanese,
       userAnswer: answer,
       pokemon: currentQuestion.pokemon
     });
-    setShowingAnswer(true);
+    setShowingAnswer(true); // 正解を表示するフラグを立てる
   };
 
+  // 次の問題を生成し、状態をリセット
   const handleNextQuestion = () => {
-    setShowingAnswer(false);
-    setLastAnswer(null);
-    generateQuestion();
+    setShowingAnswer(false); // 正解を表示するフラグを降ろす
+    setLastAnswer(null); // 最後の正解をリセット
+    generateQuestion(); // 次の問題を生成
   };
 
+  // 初期表示用のポケモンデータ
   const starterPokemon = [
     {
       id: 25,
@@ -84,6 +91,7 @@ function App() {
         <p className="text-gray-300 text-lg">「ポケットモンスター赤・緑」に登場する151匹から出題</p>
       </div>
 
+      {/* クイズが開始されていない場合の表示 */}
       {!currentQuestion && !isFinished ? (
         <div className="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg p-8 max-w-2xl w-full relative">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
@@ -121,6 +129,7 @@ function App() {
         </div>
       ) : (
         <>
+          {/* クイズが終了していない場合のスコアボード表示 */}
           {!isFinished && (
             <div className="mb-6">
               <ScoreBoard 
@@ -131,6 +140,7 @@ function App() {
             </div>
           )}
 
+          {/* クイズが終了した場合の結果表示 */}
           {isFinished ? (
             <QuizResults 
               score={score}
@@ -138,6 +148,7 @@ function App() {
               onReset={resetQuiz}
             />
           ) : showingAnswer && lastAnswer ? (
+            // 正解を表示する場合のフィードバック表示
             <AnswerFeedback
               isCorrect={lastAnswer.isCorrect}
               correctAnswer={lastAnswer.correctAnswer}
@@ -146,6 +157,7 @@ function App() {
               onNext={handleNextQuestion}
             />
           ) : (
+            // 現在の問題を表示
             currentQuestion && (
               <QuizCard
                 question={currentQuestion}
