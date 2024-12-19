@@ -25,7 +25,7 @@ export const QuizResults: React.FC<QuizResultsProps> = ({ score, history, onRese
     ).join('');
     
     // シェアするテキストを作成
-    const shareText = `初代ポケモン名前当てクイズ\n\n${score}/${totalQuestions}問 正解！\n${resultEmojis}\n\n#初代ポケモン名前当てクイズ\n\nhttps://quiz-pokemon-151.vercel.app/`;
+    const shareText = `初代ポケモン名前当てクイズ\n\n${score}/${totalQuestions}問 正解！\n${resultEmojis}\n\n#初代ポケモン名前当てクイズ\n\n`;
 
     // シェアするためのURLを作成
     const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;

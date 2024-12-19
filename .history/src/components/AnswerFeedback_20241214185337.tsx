@@ -9,8 +9,6 @@ interface AnswerFeedbackProps {
   userAnswer: string; // ユーザーの答え
   pokemon: Pokemon; // ポケモンの情報
   onNext: () => void; // 次の問題へ進むための関数
-  currentQuestion: number; // 現在の問題番号
-  totalQuestions: number; // 全体の問題数
 }
 
 // AnswerFeedbackコンポーネントの定義
@@ -19,9 +17,7 @@ export const AnswerFeedback: React.FC<AnswerFeedbackProps> = ({
   correctAnswer, // 正解の答えを受け取る
   userAnswer, // ユーザーの答えを受け取る
   pokemon, // ポケモンの情報を受け取る
-  onNext, // 次の問題へ進むための関数を受け取る
-  currentQuestion, // 現在の問題番号を受け取る
-  totalQuestions // 全体の問題数を受け取る
+  onNext // 次の問題へ進むための関数を受け取る
 }) => {
   return (
     // コンポーネントの全体を囲むdiv
@@ -67,7 +63,7 @@ export const AnswerFeedback: React.FC<AnswerFeedbackProps> = ({
           className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg
                    transition-colors duration-200" // ボタンのスタイル
         >
-          {currentQuestion === totalQuestions ? "テスト結果を表示" : "次の問題へ"} // ボタンのラベル
+          次の問題へ // ボタンのラベル
         </button>
       </div>
     </div>

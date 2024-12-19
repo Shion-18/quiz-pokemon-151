@@ -11,7 +11,9 @@ const rootElement = document.getElementById('root');
 // 次に、StrictModeを使用してアプリケーションをラップします
 const app = (
   <StrictMode>
+    
       <App />
+    </LanguageProvider>
   </StrictMode>
 );
 // 最後に、createRootを使用してアプリケーションをレンダリングします

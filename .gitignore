@@ -1,4 +1,4 @@
-# Logs
+# ログファイルを無視します
 logs
 *.log
 npm-debug.log*
@@ -7,12 +7,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# node_modulesディレクトリを無視します（依存関係のパッケージが含まれています）
 node_modules
+
+# ビルド成果物を無視します
 dist
 dist-ssr
+
+# ローカル環境固有の設定ファイルを無視します
 *.local
 
-# Editor directories and files
+# エディタの設定ディレクトリとファイルを無視します
 .vscode/*
 !.vscode/extensions.json
 .idea
