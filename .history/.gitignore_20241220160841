@@ -1,0 +1,38 @@
+# ログファイルを無視します
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+<<<<<<< HEAD
+# node_modulesディレクトリを無視します（依存関係のパッケージが含まれています）
+node_modules
+
+# ビルド成果物を無視します
+dist
+dist-ssr
+
+# ローカル環境固有の設定ファイルを無視します
+*.local
+
+# エディタの設定ディレクトリとファイルを無視します
+=======
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+>>>>>>> 666b29f1f3817e693ed1b67e77311c0320f70774
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

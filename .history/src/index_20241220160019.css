@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+/* Tailwind CSSの基本スタイルをインポート */
+@tailwind base;
+
+/* Tailwind CSSのコンポーネントスタイルをインポート */
+@tailwind components;
+
+/* Tailwind CSSのユーティリティスタイルをインポート */
+@tailwind utilities;
+
+/* 基本レイヤーにカスタムスタイルを追加 */
+@layer base {
+  body {
+    /* 文字を滑らかに表示するためのスタイルを適用 */
+    @apply antialiased;
+  }
+}
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+>>>>>>> 666b29f1f3817e693ed1b67e77311c0320f70774
