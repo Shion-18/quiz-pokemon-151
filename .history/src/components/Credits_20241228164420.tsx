@@ -1,8 +1,7 @@
 import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
-// Creditsコンポーネントを定義
+
 export const Credits: React.FC = () => {
-  // useTranslationフックを使用して翻訳関数tを取得
   const { t } = useTranslation();
 
   return (
@@ -24,7 +23,6 @@ export const Credits: React.FC = () => {
             rel="noopener noreferrer"
             className="text-blue-400 hover:text-blue-300 transition-colors duration-200 ml-1"
           >
-            {/* このaタグはテキストの色を青（#60A5FA）にし、ホバー時に色を薄い青（#93C5FD）に変更します。色の変更は200ミリ秒のトランジションで行われます。左に1のマージンを追加しています。 */}
             PokéAPI
           </a>
         </p>

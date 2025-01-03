@@ -1,8 +1,7 @@
 import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
-// Creditsコンポーネントを定義
+
 export const Credits: React.FC = () => {
-  // useTranslationフックを使用して翻訳関数tを取得
   const { t } = useTranslation();
 
   return (
