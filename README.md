@@ -1,9 +1,9 @@
 （※日本語テキストは、英語の下にあります）
-##Overview
+## Overview
 This silhouette quiz application features 151 Pokémon from Pokémon Red and Green.
 Quiz Link
 
-##Quiz Functionality
+## Quiz Functionality
 
 -Displays a randomly selected Pokémon silhouette
 Choose the correct answer from the four options
@@ -21,16 +21,16 @@ Shows the accuracy history for all 10 questions
 -Play Count
 Displays the total number of plays
 
-##Tech Stack
+## Tech Stack
 React
 TypeScript
 Vite
 Tailwind CSS
 Lucide React (for icons)
 
-##Project Structure
+## Project Structure
 
-###src/
+### src/
 ├── components/     # UI components  
 ├── contexts/       # React contexts  
 ├── data/           # Pokémon data  
@@ -38,8 +38,8 @@ Lucide React (for icons)
 ├── types/          # Type definitions  
 └── App.tsx         # Main application  
 
-##Acknowledgments
-Pokémon image data is provided by PokeAPI.
+## Acknowledgments
+Pokémon image data is provided by PokeAPI(https://pokeapi.co/).
 
 
 ## 概要
