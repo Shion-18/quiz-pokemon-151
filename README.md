@@ -1,3 +1,47 @@
+（※日本語テキストは、英語の下にあります）
+##Overview
+This silhouette quiz application features 151 Pokémon from Pokémon Red and Green.
+Quiz Link
+
+##Quiz Functionality
+
+-Displays a randomly selected Pokémon silhouette
+Choose the correct answer from the four options
+-Instant feedback on correct or incorrect answers
+
+-Results Display
+Shows the accuracy history for all 10 questions
+
+-Graphical score representation
+
+-Share results on X (formerly Twitter)
+
+-Visual representation using emojis
+
+-Play Count
+Displays the total number of plays
+
+##Tech Stack
+React
+TypeScript
+Vite
+Tailwind CSS
+Lucide React (for icons)
+
+##Project Structure
+
+###src/
+├── components/     # UI components  
+├── contexts/       # React contexts  
+├── data/           # Pokémon data  
+├── hooks/          # Custom hooks  
+├── types/          # Type definitions  
+└── App.tsx         # Main application  
+
+##Acknowledgments
+Pokémon image data is provided by PokeAPI.
+
+
 ## 概要
 
 「ポケットモンスター赤・緑」に登場する151匹のポケモンから出題される、シルエットクイズ・アプリケーションです。
