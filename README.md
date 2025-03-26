@@ -1,7 +1,9 @@
 （※日本語テキストは、英語の下にあります）
 ## Overview
 This silhouette quiz application features 151 Pokémon from Pokémon Red and Green.
+
 [Quiz Link](https://quiz-pokemon-151.vercel.app/)
+
 
 ## Quiz Functionality
 
@@ -21,12 +23,14 @@ Shows the accuracy history for all 10 questions
 -Play Count
 Displays the total number of plays
 
+
 ## Tech Stack
 React
 TypeScript
 Vite
 Tailwind CSS
 Lucide React (for icons)
+
 
 ## Project Structure
 
@@ -38,8 +42,10 @@ Lucide React (for icons)
 ├── types/          # Type definitions  
 └── App.tsx         # Main application  
 
+
 ## Acknowledgments
 Pokémon image data is provided by PokeAPI(https://pokeapi.co/).
+
 
 
 ## 概要
