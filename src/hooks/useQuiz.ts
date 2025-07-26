@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
+
 import { allPokemon } from '../data';
 import type { QuizQuestion } from '../types/pokemon';
 
@@ -47,6 +48,7 @@ export const useQuiz = () => {
     }
 
     // ランダムにポケモンを選択
+    
     const pokemon = allPokemon[Math.floor(Math.random() * allPokemon.length)];
     // 不正解のオプションを生成
     const incorrectOptions = allPokemon
