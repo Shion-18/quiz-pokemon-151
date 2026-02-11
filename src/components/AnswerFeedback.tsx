@@ -49,14 +49,14 @@ export const AnswerFeedback: React.FC<AnswerFeedbackProps> = ({
         {/* 正解・不正解のメッセージとユーザーの答えを表示する部分 */}
         <div className="text-center mb-6">
           <h3 className="text-xl font-bold mb-2 text-gray-900">
-            {isCorrect ? "正解！" : "不正解..."} // 正解か不正解かのメッセージ
+            {isCorrect ? "正解！" : "不正解..."}
           </h3>
           <p className="text-lg text-gray-700">
-            正解は「{correctAnswer}」です // 正解の答えを表示
+            正解は「{correctAnswer}」です
           </p>
           {!isCorrect && (
             <p className="text-gray-500 mt-1">
-              あなたの回答: {userAnswer} // 不正解の場合、ユーザーの答えを表示
+              あなたの回答: {userAnswer}
             </p>
           )}
         </div>
@@ -67,7 +67,7 @@ export const AnswerFeedback: React.FC<AnswerFeedbackProps> = ({
           className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg
                    transition-colors duration-200" // ボタンのスタイル
         >
-          {currentQuestion === totalQuestions ? "テスト結果を表示" : "次の問題へ"} // ボタンのラベル
+          {currentQuestion === totalQuestions ? "テスト結果を表示" : "次の問題へ"}
         </button>
       </div>
     </div>

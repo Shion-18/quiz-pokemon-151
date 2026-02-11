@@ -35,7 +35,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg
                      transition-colors duration-200" // ボタンのスタイルを指定します。
           >
-            {option} // ボタンに表示されるテキストを指定します。
+            {option}
           </button>
         ))}
       </div>
