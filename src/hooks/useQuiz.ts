@@ -1,11 +1,16 @@
-import { useState, useCallback, useEffect } from 'react';
-
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { allPokemon } from '../data';
-import type { QuizQuestion } from '../types/pokemon';
+import type { Pokemon, QuizQuestion } from '../types/pokemon';
 
 // クイズの全体的な設定を定義
 const TOTAL_QUESTIONS = 10; // クイズの総問題数
 const PLAY_COUNT_KEY = 'pokemon-quiz-play-count'; // ローカルストレージに保存するプレイ回数のキー
+
+// 配列をシャッフルして先頭n個を返す
+const pickRandom = (arr: Pokemon[], n: number): Pokemon[] => {
+  const shuffled = [...arr].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, n);
+};
 
 // クイズの履歴を記録するためのインターフェイス
 export interface QuizHistory {
@@ -30,6 +35,7 @@ export const useQuiz = () => {
   const [isFinished, setIsFinished] = useState(false); // クイズが終了したかどうか
   const [history, setHistory] = useState<QuizHistory[]>([]); // クイズの履歴
   const [playCount, setPlayCount] = useState(0); // クイズのプレイ回数
+  const questionPoolRef = useRef<Pokemon[]>([]); // 出題用のポケモンリスト（10匹、重複なし）
 
   // コンポーネントがマウントされた時に、ローカルストレージからプレイ回数を取得
   useEffect(() => {
@@ -47,9 +53,12 @@ export const useQuiz = () => {
       return;
     }
 
-    // ランダムにポケモンを選択
-    
-    const pokemon = allPokemon[Math.floor(Math.random() * allPokemon.length)];
+    // 初回呼び出し時に出題プールを生成（重複なし10匹）
+    if (questionPoolRef.current.length === 0) {
+      questionPoolRef.current = pickRandom(allPokemon, TOTAL_QUESTIONS);
+    }
+
+    const pokemon = questionPoolRef.current[questionNumber];
     // 不正解のオプションを生成
     const incorrectOptions = allPokemon
       .filter(p => p.id !== pokemon.id) // 正解のポケモンを除外
@@ -98,6 +107,7 @@ export const useQuiz = () => {
     setIsFinished(false); // クイズ終了フラグをリセット
     setHistory([]); // 履歴をリセット
     setCurrentQuestion(null); // 現在の問題をリセット
+    questionPoolRef.current = []; // 出題プールをリセット
   }, []);
 
   // フックから返すオブジェクト
