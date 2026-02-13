@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nREADMEにテスト計画（UT10本+E2E5本）を追加\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(gh pr create:*)",
+      "Bash(gh pr merge:*)",
+      "Bash(gh pr view:*)",
+      "Bash(git fetch:*)",
+      "Bash(npx vercel:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(npm run build:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\npostcss.config.jsをESモジュール構文に修正（Vercelビルドエラー修正）\n\npackage.jsonの\"type\":\"module\"とCommonJS構文の矛盾を解消\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(gh api:*)",
+      "WebFetch(domain:quiz-pokemon-151.vercel.app)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nJSXテキスト内の//コメントを除去（UIにコメントが表示されるバグ修正）\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(xargs:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nフィードバック画面のレイアウトをコンパクトに変更\n\n画像とテキストを横並びにし、「次の問題へ」ボタンの位置を\nQuizCardの選択肢ボタンと近い高さに揃えた。\nスクロールなしで連続操作できるよう改善。\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(npx playwright install:*)",
+      "Bash(npx playwright:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nOGP画像とメタタグを設定（Xプレビュー対応）\n\n- アプリのスタート画面スクリーンショットをOGP画像として追加\n- og:description / twitter:description を修正\n- og:image / twitter:image を実画像URLに修正\n- og:url を実デプロイURLに修正\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(curl:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nクイズの出題重複を防止（10問すべて異なるポケモンを出題）\n\nクイズ開始時に151匹からランダム10匹を事前選出し、\n出題プール\\(questionPoolRef\\)から順番に出題するように変更。\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git merge:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

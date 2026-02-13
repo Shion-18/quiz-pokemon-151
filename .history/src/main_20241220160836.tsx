@@ -1,4 +1,4 @@
-
+// ここには、エントリーレベルのソフトウェアエンジニアでも理解できるように、解説コメントを追加します
 // まず、必要なモジュールをインポートします
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
