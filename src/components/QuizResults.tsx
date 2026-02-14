@@ -1,6 +1,6 @@
 import React from 'react'; // Reactライブラリをインポート
 import type { QuizHistory } from '../hooks/useQuiz'; // useQuizフックからQuizHistory型をインポート
-import { CheckCircle2, XCircle, Share2 } from 'lucide-react'; // lucide-reactライブラリからアイコンをインポート
+import { CheckCircle2, XCircle, Share2, Users } from 'lucide-react'; // lucide-reactライブラリからアイコンをインポート
 
 // QuizResultsPropsインターフェイスの定義
 // このインターフェイスは、QuizResultsコンポーネントが受け取るプロパティの型を定義します。
@@ -8,11 +8,12 @@ interface QuizResultsProps {
   score: number; // ユーザーが正解した問題数
   history: QuizHistory[]; // クイズの履歴を保持する配列
   onReset: () => void; // クイズをリセットするための関数
+  playCount: number; // 累積プレイ人数
 }
 
 // QuizResultsコンポーネントの定義
 // このコンポーネントは、クイズの結果を表示します。
-export const QuizResults: React.FC<QuizResultsProps> = ({ score, history, onReset }) => {
+export const QuizResults: React.FC<QuizResultsProps> = ({ score, history, onReset, playCount }) => {
   const totalQuestions = history.length; // 全問題数を計算
   const incorrectCount = totalQuestions - score; // 不正解した問題数を計算
 
@@ -99,6 +100,15 @@ export const QuizResults: React.FC<QuizResultsProps> = ({ score, history, onRese
           </div>
         ))}
       </div>
+
+      {playCount > 0 && (
+        <div className="flex items-center justify-center gap-2 mb-6">
+          <Users className="w-4 h-4 text-gray-500" />
+          <span className="text-sm text-gray-500">
+            これまで{playCount}人のポケモンファンが、このクイズを遊びました！
+          </span>
+        </div>
+      )}
 
       <div className="flex justify-center gap-4">
         <button

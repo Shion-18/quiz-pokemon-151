@@ -1,102 +1,102 @@
 export const pokemonList5 = [
   {
     id: 67,
-    name: { japanese: "ゴーリキー", english: "Machoke" },
+    name: { japanese: "ゴーリキー" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/67.png"
   },
   {
     id: 68,
-    name: { japanese: "カイリキー", english: "Machamp" },
+    name: { japanese: "カイリキー" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/68.png"
   },
   {
     id: 69,
-    name: { japanese: "マダツボミ", english: "Bellsprout" },
+    name: { japanese: "マダツボミ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/69.png"
   },
   {
     id: 70,
-    name: { japanese: "ウツドン", english: "Weepinbell" },
+    name: { japanese: "ウツドン" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/70.png"
   },
   {
     id: 71,
-    name: { japanese: "ウツボット", english: "Victreebel" },
+    name: { japanese: "ウツボット" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/71.png"
   },
   {
     id: 72,
-    name: { japanese: "メノクラゲ", english: "Tentacool" },
+    name: { japanese: "メノクラゲ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/72.png"
   },
   {
     id: 73,
-    name: { japanese: "ドククラゲ", english: "Tentacruel" },
+    name: { japanese: "ドククラゲ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/73.png"
   },
   {
     id: 74,
-    name: { japanese: "イシツブテ", english: "Geodude" },
+    name: { japanese: "イシツブテ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/74.png"
   },
   {
     id: 75,
-    name: { japanese: "ゴローン", english: "Graveler" },
+    name: { japanese: "ゴローン" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/75.png"
   },
   {
     id: 76,
-    name: { japanese: "ゴローニャ", english: "Golem" },
+    name: { japanese: "ゴローニャ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/76.png"
   },
   {
     id: 77,
-    name: { japanese: "ポニータ", english: "Ponyta" },
+    name: { japanese: "ポニータ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/77.png"
   },
   {
     id: 78,
-    name: { japanese: "ギャロップ", english: "Rapidash" },
+    name: { japanese: "ギャロップ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/78.png"
   },
   {
     id: 79,
-    name: { japanese: "ヤドン", english: "Slowpoke" },
+    name: { japanese: "ヤドン" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/79.png"
   },
   {
     id: 80,
-    name: { japanese: "ヤドラン", english: "Slowbro" },
+    name: { japanese: "ヤドラン" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png"
   },
   {
     id: 81,
-    name: { japanese: "コイル", english: "Magnemite" },
+    name: { japanese: "コイル" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/81.png"
   },
   {
     id: 82,
-    name: { japanese: "レアコイル", english: "Magneton" },
+    name: { japanese: "レアコイル" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/82.png"
   },
   {
     id: 83,
-    name: { japanese: "カモネギ", english: "Farfetch'd" },
+    name: { japanese: "カモネギ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/83.png"
   },
   {
     id: 84,
-    name: { japanese: "ドードー", english: "Doduo" },
+    name: { japanese: "ドードー" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/84.png"
   },
   {
     id: 85,
-    name: { japanese: "ドードリオ", english: "Dodrio" },
+    name: { japanese: "ドードリオ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/85.png"
   },
   {
     id: 86,
-    name: { japanese: "パウワウ", english: "Seel" },
+    name: { japanese: "パウワウ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/86.png"
   }
 ];

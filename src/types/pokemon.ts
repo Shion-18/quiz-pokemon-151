@@ -4,7 +4,6 @@ export interface Pokemon {
   id: number; // ポケモンのID
   name: {
     japanese: string; // ポケモンの日本語名
-    english: string; // ポケモンの英語名
   };
   imageUrl: string; // ポケモンの画像URL
 }
