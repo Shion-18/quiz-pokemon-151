@@ -18,7 +18,6 @@ export interface QuizHistory {
     id: number; // ポケモンのID
     name: {
       japanese: string; // ポケモンの日本語名
-      english: string; // ポケモンの英語名
     };
     imageUrl: string; // ポケモンの画像URL
   };
@@ -37,19 +36,47 @@ export const useQuiz = () => {
   const [playCount, setPlayCount] = useState(0); // クイズのプレイ回数
   const questionPoolRef = useRef<Pokemon[]>([]); // 出題用のポケモンリスト（10匹、重複なし）
 
-  // コンポーネントがマウントされた時に、ローカルストレージからプレイ回数を取得
+  // コンポーネントがマウントされた時に、累積プレイ回数を取得
   useEffect(() => {
-    const count = localStorage.getItem(PLAY_COUNT_KEY); // ローカルストレージからプレイ回数を取得
-    setPlayCount(count ? parseInt(count, 10) : 0); // プレイ回数を状態に設定
+    // localStorageから即座に表示（フラッシュ防止）
+    const localCount = localStorage.getItem(PLAY_COUNT_KEY);
+    if (localCount) {
+      setPlayCount(parseInt(localCount, 10));
+    }
+
+    // KV APIからサーバー値を取得して上書き
+    fetch('/api/play-count')
+      .then(res => res.json())
+      .then(data => {
+        const kvCount = data.count ?? 0;
+        setPlayCount(kvCount);
+        localStorage.setItem(PLAY_COUNT_KEY, kvCount.toString());
+      })
+      .catch(err => {
+        console.error('Failed to fetch play count:', err);
+      });
   }, []);
 
   // 新しい問題を生成する関数
   const generateQuestion = useCallback(() => {
     if (questionNumber >= TOTAL_QUESTIONS) { // 全ての問題が終了したか確認
       setIsFinished(true); // クイズを終了状態に設定
-      const newCount = playCount + 1; // プレイ回数を増やす
-      localStorage.setItem(PLAY_COUNT_KEY, newCount.toString()); // ローカルストレージに新しいプレイ回数を保存
-      setPlayCount(newCount); // 状態を更新
+
+      // KV APIでアトミックにインクリメント
+      fetch('/api/play-count', { method: 'POST' })
+        .then(res => res.json())
+        .then(data => {
+          const newCount = data.count ?? playCount + 1;
+          setPlayCount(newCount);
+          localStorage.setItem(PLAY_COUNT_KEY, newCount.toString());
+        })
+        .catch(() => {
+          // フォールバック: ローカルで楽観的にインクリメント
+          const newCount = playCount + 1;
+          setPlayCount(newCount);
+          localStorage.setItem(PLAY_COUNT_KEY, newCount.toString());
+        });
+
       return;
     }
 
@@ -76,7 +103,7 @@ export const useQuiz = () => {
       options, // 選択肢
       correctAnswer: pokemon.name.japanese // 正解の答え
     });
-  }, [questionNumber, playCount]);
+  }, [questionNumber]);
 
   // ユーザーの答えをチェックする関数
   const checkAnswer = useCallback((answer: string) => {

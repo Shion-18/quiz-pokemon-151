@@ -1,102 +1,102 @@
 export const pokemonList = [
   {
     id: 1,
-    name: { japanese: "フシギダネ", english: "Bulbasaur" },
+    name: { japanese: "フシギダネ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
   },
   {
     id: 2,
-    name: { japanese: "フシギソウ", english: "Ivysaur" },
+    name: { japanese: "フシギソウ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"
   },
   {
     id: 3,
-    name: { japanese: "フシギバナ", english: "Venusaur" },
+    name: { japanese: "フシギバナ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png"
   },
   {
     id: 4,
-    name: { japanese: "ヒトカゲ", english: "Charmander" },
+    name: { japanese: "ヒトカゲ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
   },
   {
     id: 5,
-    name: { japanese: "リザード", english: "Charmeleon" },
+    name: { japanese: "リザード" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png"
   },
   {
     id: 6,
-    name: { japanese: "リザードン", english: "Charizard" },
+    name: { japanese: "リザードン" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
   },
   {
     id: 7,
-    name: { japanese: "ゼニガメ", english: "Squirtle" },
+    name: { japanese: "ゼニガメ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
   },
   {
     id: 8,
-    name: { japanese: "カメール", english: "Wartortle" },
+    name: { japanese: "カメール" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png"
   },
   {
     id: 9,
-    name: { japanese: "カメックス", english: "Blastoise" },
+    name: { japanese: "カメックス" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png"
   },
   {
     id: 10,
-    name: { japanese: "キャタピー", english: "Caterpie" },
+    name: { japanese: "キャタピー" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png"
   },
   {
     id: 11,
-    name: { japanese: "トランセル", english: "Metapod" },
+    name: { japanese: "トランセル" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/11.png"
   },
   {
     id: 12,
-    name: { japanese: "バタフリー", english: "Butterfree" },
+    name: { japanese: "バタフリー" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png"
   },
   {
     id: 13,
-    name: { japanese: "ビードル", english: "Weedle" },
+    name: { japanese: "ビードル" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/13.png"
   },
   {
     id: 14,
-    name: { japanese: "コクーン", english: "Kakuna" },
+    name: { japanese: "コクーン" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/14.png"
   },
   {
     id: 15,
-    name: { japanese: "スピアー", english: "Beedrill" },
+    name: { japanese: "スピアー" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png"
   },
   {
     id: 16,
-    name: { japanese: "ポッポ", english: "Pidgey" },
+    name: { japanese: "ポッポ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png"
   },
   {
     id: 17,
-    name: { japanese: "ピジョン", english: "Pidgeotto" },
+    name: { japanese: "ピジョン" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png"
   },
   {
     id: 18,
-    name: { japanese: "ピジョット", english: "Pidgeot" },
+    name: { japanese: "ピジョット" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png"
   },
   {
     id: 19,
-    name: { japanese: "コラッタ", english: "Rattata" },
+    name: { japanese: "コラッタ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png"
   },
   {
     id: 20,
-    name: { japanese: "ラッタ", english: "Raticate" },
+    name: { japanese: "ラッタ" },
     imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png"
   },
   // 続きは別ファイルに分割します
