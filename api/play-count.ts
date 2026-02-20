@@ -1,5 +1,10 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+
+const redis = new Redis({
+  url: process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN!,
+});
 
 const KEY = 'play-count';
 const MAX_COUNT = 65536; // 2^16
@@ -15,16 +20,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     if (req.method === 'GET') {
-      const count = (await kv.get<number>(KEY)) ?? 0;
+      const count = (await redis.get<number>(KEY)) ?? 0;
       return res.status(200).json({ count });
     }
 
     if (req.method === 'POST') {
-      const current = (await kv.get<number>(KEY)) ?? 0;
+      const current = (await redis.get<number>(KEY)) ?? 0;
       if (current >= MAX_COUNT) {
         return res.status(200).json({ count: current, capped: true });
       }
-      const newCount = await kv.incr(KEY);
+      const newCount = await redis.incr(KEY);
       return res.status(200).json({ count: newCount });
     }
 
