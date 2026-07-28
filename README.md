@@ -43,7 +43,13 @@
 
 ## 謝辞・権利表記
 
-本アプリケーションは非公式かつ個人による制作物です。ポケモンおよび関連するすべてのキャラクター名、画像、商標は © Pokémon、© Nintendo/Creatures Inc./GAME FREAK inc. に帰属します。ポケモンの画像データは [PokeAPI](https://pokeapi.co/) から提供されています。
+本アプリケーションは非公式かつ個人による制作物です。
+
+ポケットモンスター・ポケモン・Pokémonは任天堂・クリーチャーズ・ゲームフリークの商標です。著作権は任天堂・クリーチャーズ・ゲームフリークに帰属します。
+
+©Pokémon/Nintendo/Creatures/GAME FREAK
+
+ポケモンの画像データは [PokeAPI](https://pokeapi.co/) から提供されています。
 
 ---
 
@@ -90,4 +96,10 @@ Open the [live demo](https://quiz-pokemon-151.vercel.app/) and press "クイズ�
 
 ## Acknowledgments
 
-This is an unofficial, personal project. Pokémon and all related names, images and trademarks are © Pokémon, © Nintendo/Creatures Inc./GAME FREAK inc. Pokémon image data is provided by [PokeAPI](https://pokeapi.co/).
+This is an unofficial, personal project.
+
+Pokémon and Pokémon character names are trademarks of Nintendo, Creatures Inc. and GAME FREAK inc., and the copyright belongs to them.
+
+©Pokémon/Nintendo/Creatures/GAME FREAK
+
+Pokémon image data is provided by [PokeAPI](https://pokeapi.co/).
