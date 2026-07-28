@@ -1,98 +1,105 @@
-（※日本語テキストは、英語の下にあります）
-## Overview
-This silhouette quiz application features 151 Pokémon from Pokémon Red and Green.
+# 初代ポケモン名前当てクイズ
 
-[Quiz Link](https://quiz-pokemon-151.vercel.app/)
+> 子どもの頃に「ポケットモンスター赤・緑」を遊んでいた世代に、懐かしい気持ちになってもらいたくて作りました。
 
+「ポケットモンスター赤・緑」に登場する151匹の中から、ぼかして表示されたポケモンの名前を4択で当てる Web クイズアプリ。全10問の結果をグラフで振り返り、X にシェアできます。
 
-## Quiz Functionality
+*English version is below.*
 
--Displays a randomly selected Pokémon silhouette
-Choose the correct answer from the four options
--Instant feedback on correct or incorrect answers
+## デモ
 
--Results Display
-Shows the accuracy history for all 10 questions
+**▶ [https://quiz-pokemon-151.vercel.app/](https://quiz-pokemon-151.vercel.app/)**
 
--Graphical score representation
-
--Share results on X (formerly Twitter)
-
--Visual representation using emojis
-
--Play Count
-Displays the total number of plays
-
-
-## Tech Stack
-React
-TypeScript
-Vite
-Tailwind CSS
-Lucide React (for icons)
-
-
-## Project Structure
-
-### src/
-├── components/     # UI components  
-├── contexts/       # React contexts  
-├── data/           # Pokémon data  
-├── hooks/          # Custom hooks  
-├── types/          # Type definitions  
-└── App.tsx         # Main application  
-
-
-## Acknowledgments
-Pokémon image data is provided by PokeAPI(https://pokeapi.co/).
-
-
-
-## 概要
-
-「ポケットモンスター赤・緑」に登場する151匹のポケモンから出題される、シルエットクイズ・アプリケーションです。
-"https://quiz-pokemon-151.vercel.app/"
+![スクリーンショット](public/og-image.png)
 
 ## 主な機能
 
-### クイズ機能
-- ランダムに選ばれたポケモンのシルエットを表示
-- 4つの選択肢から正解を選ぶ
-- 正解・不正解がすぐに分かる
-
-### 結果表示
-- 全10問の正誤履歴を表示
-- グラフィカルなスコア表示
-
-### Xへのシェア機能
-- 絵文字を用いた視覚的な結果表示
-
-### プレイ回数カウント
-- 累計プレイ回数の表示
-
+- **151匹からランダムに10問出題** — 1回のプレイで同じポケモンは出ません
+- **ぼかし画像の4択クイズ** — 回答するとその場で正誤と正しい名前が分かります
+- **結果のグラフ表示** — 全10問の正誤履歴と、正解数・不正解数をグラフで表示します
+- **X へのシェア** — 絵文字（🟢 / ❌）で正誤を並べた結果テキストを生成し、投稿画面を開きます
+- **累計プレイ数の表示** — 全ユーザーのプレイ数をサーバー側で保持して表示します
 
 ## 技術スタック
 
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- Lucide React (アイコン)
+| 分類 | 使用技術 |
+| --- | --- |
+| フロントエンド | React 18 / TypeScript 5 |
+| ビルドツール | Vite 5 |
+| スタイリング | Tailwind CSS 3 |
+| アイコン | Lucide React |
+| バックエンド | Vercel Functions（`api/play-count.ts`） |
+| データストア | Upstash Redis（`@upstash/redis`） |
+| ホスティング | Vercel |
+| テスト | Vitest / React Testing Library |
 
+## 使い方
 
-## プロジェクト構成
+[デモのURL](https://quiz-pokemon-151.vercel.app/) を開いて「クイズを始める」を押すと始まります。
 
-```
-src/
-├── components/     # UIコンポーネント
-├── contexts/       # Reactコンテキスト
-├── data/          # ポケモンのデータ
-├── hooks/         # カスタムフック
-├── types/         # 型定義
-└── App.tsx        # メインアプリケーション
-```
+1. ぼかして表示されたポケモンの名前を、4つの選択肢から選ぶ
+2. 正誤と正しい名前が表示されるので「次の問題へ」で進む
+3. 10問終わると結果画面へ。「もう一度プレイ」で再挑戦、「結果をXでシェア」で投稿できます
 
+## 謝辞・権利表記
 
-## 謝辞
+本アプリケーションは非公式かつ個人による制作物です。
 
-ポケモンの画像データは"PokeAPI"より提供されています。
+ポケットモンスター・ポケモン・Pokémonは任天堂・クリーチャーズ・ゲームフリークの商標です。著作権は任天堂・クリーチャーズ・ゲームフリークに帰属します。
+
+©Pokémon/Nintendo/Creatures/GAME FREAK
+
+ポケモンの画像データは [PokeAPI](https://pokeapi.co/) から提供されています。
+
+---
+
+# Gen 1 Pokémon Name Quiz
+
+> Built to bring back a bit of nostalgia for the generation that played Pokémon Red and Green as kids.
+
+A web quiz app where you guess which of the 151 Pokémon from Pokémon Red and Green is hidden behind a blurred image, choosing from four options. Review your 10-question run as a graph and share it on X.
+
+## Demo
+
+**▶ [https://quiz-pokemon-151.vercel.app/](https://quiz-pokemon-151.vercel.app/)**
+
+![Screenshot](public/og-image.png)
+
+## Features
+
+- **10 random questions from all 151 Pokémon** — no repeats within a single session
+- **Blurred-image multiple choice** — instant feedback with the correct name after every answer
+- **Graphical results** — full correct/incorrect history for all 10 questions, plus a score graph
+- **Share on X** — generates a result text with an emoji summary (🟢 / ❌) and opens the composer
+- **Total play count** — the number of plays across all users, kept server-side
+
+## Built with
+
+| Area | Technology |
+| --- | --- |
+| Frontend | React 18 / TypeScript 5 |
+| Build | Vite 5 |
+| Styling | Tailwind CSS 3 |
+| Icons | Lucide React |
+| Backend | Vercel Functions (`api/play-count.ts`) |
+| Data store | Upstash Redis (`@upstash/redis`) |
+| Hosting | Vercel |
+| Testing | Vitest / React Testing Library |
+
+## Usage
+
+Open the [live demo](https://quiz-pokemon-151.vercel.app/) and press "クイズを始める" (Start quiz).
+
+1. Pick the name of the blurred Pokémon from four options
+2. The correct name is revealed — press "次の問題へ" (Next question) to continue
+3. After 10 questions you reach the results screen, where you can replay or share your result on X
+
+## Acknowledgments
+
+This is an unofficial, personal project.
+
+Pokémon and Pokémon character names are trademarks of Nintendo, Creatures Inc. and GAME FREAK inc., and the copyright belongs to them.
+
+©Pokémon/Nintendo/Creatures/GAME FREAK
+
+Pokémon image data is provided by [PokeAPI](https://pokeapi.co/).

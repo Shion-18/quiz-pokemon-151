@@ -62,7 +62,7 @@ export const StartScreen: React.FC<StartScreenProps> = ({ onStart, playCount }) 
             </div>
           ))}
         </div>
-        <div className="text-center mb-16 sm:mb-8">
+        <div className="text-center sm:mb-8">
           <button
             onClick={onStart}
             className="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg
@@ -73,8 +73,9 @@ export const StartScreen: React.FC<StartScreenProps> = ({ onStart, playCount }) 
             クイズを始める
           </button>
         </div>
+        {/* プレイ回数: スマホではボタンの下に通常配置、sm以上ではカード右下に重ねる */}
         {playCount > 0 && (
-          <div className="absolute bottom-4 right-4 left-4 sm:left-auto">
+          <div className="mt-6 sm:mt-0 sm:absolute sm:bottom-4 sm:right-4">
             <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full border border-gray-200 shadow-sm">
               <Users className="w-4 h-4 text-gray-600 shrink-0" />
               <span className="text-sm text-gray-600 whitespace-pre-line leading-relaxed">

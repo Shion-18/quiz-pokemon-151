@@ -13,6 +13,7 @@ node_modules
 # ビルド成果物を無視します
 dist
 dist-ssr
+*.tsbuildinfo
 
 # ローカル環境固有の設定ファイルを無視します
 *.local
@@ -27,6 +28,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# エディタのローカル変更履歴（Local History拡張）
+.history
 
 # Claude Code設定
 .claude

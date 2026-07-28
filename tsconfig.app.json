@@ -30,7 +30,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "incremental": true
+    "incremental": true,
+
+    /* テスト: describe/it/expect をimportなしで型解決する */
+    "types": ["vitest/globals"]
   },
   "include": ["src"]
 }
