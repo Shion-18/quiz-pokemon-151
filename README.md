@@ -35,7 +35,7 @@
 
 ## 使い方
 
-インストール不要です。[デモのURL](https://quiz-pokemon-151.vercel.app/) を開いて「クイズを始める」を押すだけで始まります。
+[デモのURL](https://quiz-pokemon-151.vercel.app/) を開いて「クイズを始める」を押すと始まります。
 
 1. ぼかして表示されたポケモンの名前を、4つの選択肢から選ぶ
 2. 正誤と正しい名前が表示されるので「次の問題へ」で進む
@@ -82,7 +82,7 @@ A web quiz app where you guess which of the 151 Pokémon from Pokémon Red and G
 
 ## Usage
 
-No installation required. Open the [live demo](https://quiz-pokemon-151.vercel.app/) and press "クイズを始める" (Start quiz).
+Open the [live demo](https://quiz-pokemon-151.vercel.app/) and press "クイズを始める" (Start quiz).
 
 1. Pick the name of the blurred Pokémon from four options
 2. The correct name is revealed — press "次の問題へ" (Next question) to continue
